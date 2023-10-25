@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5em;
+        }
+        table{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 8em;
+            width: 3.5em;
+            height: 3.5em;
+        
+        }
+        td{
+            background-color: black;
+            color: white;
+            width: 1em;
+            height: 1em;
+            border: 1px solid rgb(255, 255, 255);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        td:hover{
+            background-color: rgb(255, 255, 255);
+            color: black;
+            transition: 0.5s;
+
+        }
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td onclick="toMark(0)"></td>
+            <td onclick="toMark(1)"></td>
+            <td onclick="toMark(2)"></td>
+        </tr>
+        <tr>
+            <td onclick="toMark(3)"></td>
+            <td onclick="toMark(4)"></td>
+            <td onclick="toMark(5)"></td>
+        </tr>
+        <tr>
+            <td onclick="toMark(6)"></td>
+            <td onclick="toMark(7)"></td>
+            <td onclick="toMark(8)"></td>
+        </tr>
+    </table>
+</body>
+<script>
+
+let jogador = "X"
+let table =["","","","","","","","","",]
+
+function toMark(i){
+    table[i] = jogador
+    if(jogador == "X") {
+        jogador = "O"}
+        else{
+            jogador = "X"
+        }
+        render()
+}
+
+    function render(){
+
+        let blocks = document.querySelectorAll("td")
+        let i = 0
+
+        for(let i = 0; i < 9; i++){
+            blocks[i].innerHTML = table[i]
+        }
+    }
+</script>
+</html>
